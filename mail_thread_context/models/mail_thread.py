@@ -17,6 +17,7 @@ class MailThread(models.AbstractModel):
        (auto subscription, tracking, post, ...)
      - ``mail_notify_force_send``: if less than 50 email notifications to send,
        send them directly instead of using the queue; True by default
+     - ``mail_post_autofollow``: Automatically subscribe recipients if asked to
     """
 
     @api.model_create_multi
@@ -29,4 +30,4 @@ class MailThread(models.AbstractModel):
     @api.returns('mail.message', lambda value: value.id)
     def message_post(self, **kwargs):
         # _logger.warning(self._context.get('mail_create_nosubscribe'))
-        return super(MailThread, self.with_context(mail_create_nosubscribe=True)).message_post(**kwargs)
+        return super(MailThread, self.with_context(mail_create_nosubscribe=True, mail_post_autofollow=False)).message_post(**kwargs)
