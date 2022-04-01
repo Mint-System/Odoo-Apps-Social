@@ -8,6 +8,8 @@ Mail Thread Context
 
 This modules disables auto subscribe on create, write and posting messages.
 
+For a detailed documentation have a look at https://www.odoo-wiki.org/.
+
 .. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
   :height: 100
   :width: 100
