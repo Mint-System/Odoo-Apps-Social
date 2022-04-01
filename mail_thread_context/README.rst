@@ -8,7 +8,7 @@ Mail Thread Context
 
 This modules disables auto subscribe on create, write and posting messages.
 
-.. image:: ./static/description/icon.png
+.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
   :height: 100
   :width: 100
   :alt: Icon
@@ -21,8 +21,8 @@ Configuration
 Maintainer
 ==========
 
-.. image:: https://www.mint-system.ch/theme_mint_system/static/img/logo.svg
-   :target: https://www.mint-system.ch
+.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/mint-system-logo.png
+  :target: https://www.mint-system.ch
 
 This module is maintained by Mint System GmbH.
 
