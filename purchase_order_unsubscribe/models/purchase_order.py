@@ -8,7 +8,8 @@ class PurchaseOrder(models.Model):
 
     def button_confirm(self):
         res = super().button_confirm()
-        # Unsubscribe all followers
+        # Unsubscribe all followers except purchase user
         for po in self:
-            po.message_unsubscribe(po.message_partner_ids.ids)
+            message_partner_ids = po.message_partner_ids.filtered(lambda p: p != po.user_id.partner_id)
+            po.message_unsubscribe(message_partner_ids.ids)
         return res

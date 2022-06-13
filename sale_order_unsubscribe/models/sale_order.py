@@ -8,7 +8,8 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
         res = super().action_confirm()
-        # Unsubscribe all followers
+        # Unsubscribe all followers except sales person
         for so in self:
-            so.message_unsubscribe(so.message_partner_ids.ids)
+            message_partner_ids = so.message_partner_ids.filtered(lambda p: p != so.user_id.partner_id)
+            so.message_unsubscribe(message_partner_ids.ids)
         return res
