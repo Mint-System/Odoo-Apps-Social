@@ -8,8 +8,10 @@ class AccountMove(models.Model):
 
     def _post(self, soft=True):
         res = super()._post(soft=soft)
-        # Unsubscribe all followers except invoice user
+        # Unsubscribe all followers except current user
         for am in self:
-            message_partner_ids = am.message_partner_ids.filtered(lambda p: p != am.invoice_user_id.partner_id)
+            current_partner_id = self.env.user.partner_id # am.user_invoice_id.partner_id
+            am.message_subscribe([current_partner_id.id])
+            message_partner_ids = am.message_partner_ids.filtered(lambda p: p != current_partner_id)
             am.message_unsubscribe(message_partner_ids.ids)
         return res
