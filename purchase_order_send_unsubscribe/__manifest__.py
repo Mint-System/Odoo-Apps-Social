@@ -1,14 +1,14 @@
 {
-    "name": "Purchase Order Unsubscribe",
+    "name": "Purchase Order Send Unsubscribe",
     "summary": """
-        Unsubscribe all followers after purchase order confirmation.
+        Unsubscribe followers after sending purchase order.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
-    "version": "14.0.1.2.0",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["purchase"],
+    "depends": ["purchase_order_unsubscribe"],
     "installable": True,
     "application": False,
     "auto_install": False,
