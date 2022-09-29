@@ -17,7 +17,6 @@ class MailComposeMessage(models.TransientModel):
         """
 
         res = super().get_record_data(values)
-        _logger.warning([res,values])
 
         template_ids = self.env['mail.template'].search([('model', '=', values.get('model'))])
         ressource_id = self.env[values['model']].browse(values.get('res_id'))
