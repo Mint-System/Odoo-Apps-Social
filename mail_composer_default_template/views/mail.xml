@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="email_template_form" model="ir.ui.view">
+    <field name="name">mail_composer_default_template.email_template_form</field>
+    <field name="model">mail.template</field>
+    <field name="inherit_id" ref="mail.email_template_form" />
+    <field name="arch" type="xml">
+
+      <xpath expr="//field[@name='model_id']" position="after">
+        <field name="domain" widget="domain" options="{'model': 'model'}" />
+      </xpath>
+
+    </field>
+  </record>
+
+  <record id="email_template_tree" model="ir.ui.view">
+    <field name="name">mail_composer_default_template.email_template_tree</field>
+    <field name="model">mail.template</field>
+    <field name="inherit_id" ref="mail.email_template_tree" />
+    <field name="arch" type="xml">
+
+      <field name="name" position="before">
+        <field name="sequence" widget="handle"/>
+      </field>
+
+    </field>
+  </record>
+
+</odoo>
