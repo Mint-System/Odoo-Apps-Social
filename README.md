@@ -19,6 +19,7 @@ git clone git@github.com:mint-system/odoo-apps-social.git ./addons/social
 | [account_move_unsubscribe](account_move_unsubscribe) |         Unsubscribe all followers after account move post. |
 | [mail_composer_default_template](mail_composer_default_template) |         Set default mail template for the mail composer. |
 | [mail_thread_context](mail_thread_context) |         This modules disables auto subscribe on create, write and posting messages. |
+| [mail_unsubscribe](mail_unsubscribe) |         Auto unsubscribe followers before sending a message. |
 | [purchase_order_send_unsubscribe](purchase_order_send_unsubscribe) |         Unsubscribe followers after sending purchase order. |
 | [purchase_order_unsubscribe](purchase_order_unsubscribe) |         Unsubscribe all followers after purchase order confirmation. |
 | [sale_order_send_unsubscribe](sale_order_send_unsubscribe) |         Unsubscribe followers after sending sale order. |
