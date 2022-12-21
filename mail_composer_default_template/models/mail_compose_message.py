@@ -22,7 +22,7 @@ class MailComposeMessage(models.TransientModel):
         ressource_id = self.env[values['model']].browse(values.get('res_id'))
         domain_template_ids = []
 
-        for template in template_ids:
+        for template in template_ids.filtered(lambda t: t.domain):
             domain = eval(template.domain)
             if domain and ressource_id.filtered_domain(domain):
                 domain_template_ids.append(template)
