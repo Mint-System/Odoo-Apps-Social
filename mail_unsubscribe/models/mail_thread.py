@@ -14,7 +14,6 @@ class MailThread(models.AbstractModel):
             message_partner_ids = mt.message_partner_ids
             if ignore_current_partner:
                 message_partner_ids = message_partner_ids.filtered(lambda p: p != current_partner_id)
-            _logger.warning(['message_unsubscribe', mt, message_partner_ids])
             mt.message_unsubscribe(message_partner_ids.ids)
 
 
