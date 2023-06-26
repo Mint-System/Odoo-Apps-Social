@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.view_model_form" />
         <field name="arch" type="xml">
             <field name="is_mail_thread" position="after">
-                <field name="unsubscribe_before_message_post" attrs="{'invisible': [('is_mail_thread', '=', False)]}"/>
+                <field name="unsubscribe_before_message_post" attrs="{'invisible': [('is_mail_thread', '=', False)]}" groups="base.group_no_one"/>
             </field>
         </field>
     </record>
