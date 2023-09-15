@@ -17,7 +17,9 @@ git clone git@github.com:mint-system/odoo-apps-social.git ./addons/social
 | [account_move_mail_thread](account_move_mail_thread) |         This module disable mail threads when creating account moves. |
 | [account_move_send_unsubscribe](account_move_send_unsubscribe) |         Unsubscribe followers after sending invoice. |
 | [account_move_unsubscribe](account_move_unsubscribe) |         Unsubscribe all followers after account move post. |
+| [mail_activity_datetime](mail_activity_datetime) |         Set time on activity deadline. |
 | [mail_composer_default_template](mail_composer_default_template) |         Set default mail template for the mail composer. |
+| [mail_no_autofollow](mail_no_autofollow) |         This disables autofollow on message post. |
 | [mail_thread_context](mail_thread_context) |         This modules disables auto subscribe on create, write and posting messages. |
 | [mail_unsubscribe](mail_unsubscribe) |         Auto unsubscribe followers before sending a message. |
 | [purchase_order_send_unsubscribe](purchase_order_send_unsubscribe) |         Unsubscribe followers after sending purchase order. |
