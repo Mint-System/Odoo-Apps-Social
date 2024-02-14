@@ -1,36 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">mail_unsubscribe.res_config_settings_view_form</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="mail.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="mail.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[@id='emails']" position="inside">
                 <div class="col-12 col-lg-6 o_setting_box" id="mail_unsubscribe">
                     <div class="o_setting_left_pane">
-                        <field name="ignore_current_partner"/>
+                        <field name="ignore_current_partner" />
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="ignore_current_partner" string="Ignore Current Partner"/>
+                        <label
+                            for="ignore_current_partner"
+                            string="Ignore Current Partner"
+                        />
                         <div class="text-muted">
                             Before sending a message all subscribers except for the current user will be removed.
                         </div>
                     </div>
                     <div class="o_setting_left_pane">
-                        <field name="mail_post_autofollow"/>
+                        <field name="mail_post_autofollow" />
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="mail_post_autofollow" string="Mail Post Autfollow"/>
+                        <label
+                            for="mail_post_autofollow"
+                            string="Mail Post Autfollow"
+                        />
                         <div class="text-muted">
                             Enable if message receivers should be subscribed automatically after sending a message.
                         </div>
                     </div>
                     <div class="o_setting_left_pane">
-                        <field name="mail_create_nosubscribe"/>
+                        <field name="mail_create_nosubscribe" />
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="mail_create_nosubscribe" string="Mail Create Nosubscribe"/>
+                        <label
+                            for="mail_create_nosubscribe"
+                            string="Mail Create Nosubscribe"
+                        />
                         <div class="text-muted">
                             Enable if current user should not be subscribed after sendig a message.
                         </div>

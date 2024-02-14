@@ -14,4 +14,5 @@ git clone git@github.com:mint-system/odoo-apps-social.git ./addons/social
 
 | Module | Summary |
 | --- | --- |
+| [mail_no_autofollow](mail_no_autofollow) |         This disables autofollow on message post. |
 | [mail_unsubscribe](mail_unsubscribe) |         Auto unsubscribe followers before sending a message. |
