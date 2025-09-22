@@ -25,7 +25,7 @@ class MailThread(
                     record_name = record.display_name
                     record_url = "/web#id=%s&model=%s&view_type=form" % (message.res_id, message.model)
                     link = '<a href="%s" target="_blank">%s</a>' % (record_url, record_name)
-                    body = _("There is a new message on %s", link)
+                    body = _("There is a new message on %s %s.", model_id.name, link)
                     for follower_id in model_id.follower_ids:
                         follower_id.channel_id.message_post(
                             body=body,
