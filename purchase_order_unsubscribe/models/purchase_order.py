@@ -11,16 +11,12 @@ class PurchaseOrder(models.Model):
 
     def _unsubscribe(self):
         unfollow_all = ast.literal_eval(
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("mail.unsubscribe_all", "False")
+            self.env["ir.config_parameter"].sudo().get_param("mail.unsubscribe_all", "False")
         )
         for po in self:
             message_partner_ids = po.message_partner_ids
             if not unfollow_all:
-                message_partner_ids = message_partner_ids.filtered(
-                    lambda p: p != po.user_id.partner_id
-                )
+                message_partner_ids = message_partner_ids.filtered(lambda p: p != po.user_id.partner_id)
             po.message_unsubscribe(message_partner_ids.ids)
 
     def button_confirm(self):

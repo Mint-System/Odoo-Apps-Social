@@ -26,13 +26,9 @@ class MailComposer(models.TransientModel):
             template_ctx = {
                 "message": self.env["mail.message"]
                 .sudo()
-                .new(
-                    dict(body=template_value["body"], record_name=record.display_name)
-                ),
+                .new(dict(body=template_value["body"], record_name=record.display_name)),
                 "model_description": model.display_name,
-                "company": "company_id" in record
-                and record["company_id"]
-                or self.env.company,
+                "company": "company_id" in record and record["company_id"] or self.env.company,
             }
 
             # Render template with layout

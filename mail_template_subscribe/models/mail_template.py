@@ -19,6 +19,4 @@ class MailTemplate(models.Model):
         eval_context = {
             "user": self.env.user,
         }
-        return self.env["res.partner"].search(
-            safe_eval(self.subscriber_domain, eval_context)
-        )
+        return self.env["res.partner"].search(safe_eval(self.subscriber_domain, eval_context))
