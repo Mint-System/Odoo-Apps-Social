@@ -1,0 +1,3 @@
+- Open a contact
+- Send a message
+- Ensure that the contact has not been added as follower
