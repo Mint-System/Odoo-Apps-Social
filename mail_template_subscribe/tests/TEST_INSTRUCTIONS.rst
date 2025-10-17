@@ -1,0 +1,7 @@
+- Setup a new mail template "Subscribe" for res.partner
+- Set "ping" as content and in the from field "odoo@example.com"
+- Change subscriber domain to "[('id', '=', 10)]"
+- Open the first partner in contacts app
+- Open the mail dialog and select the mail template
+- Click send and reload the page
+- Check if "Deco Addict" has been added as follower
