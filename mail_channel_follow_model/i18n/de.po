@@ -100,5 +100,5 @@ msgstr ""
 #. odoo-python
 #: code:addons/mail_channel_follow_model/models/mail_thread.py:0
 #, python-format
-msgid "There is a new message on %s %s."
-msgstr "Es gibt eine neue Nachricht auf %s %s."
+msgid "There is a new message on %s %s by %s."
+msgstr "Es gibt eine neue Nachricht auf %s %s von %s."

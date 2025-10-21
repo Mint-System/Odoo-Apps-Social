@@ -28,12 +28,12 @@ class MailThread(
                     record_name = record.display_name
                     record_url = "/web#id=%s&model=%s&view_type=form" % (message.res_id, message.model)
                     link = '<a href="%s" target="_blank">%s</a>' % (record_url, record_name)
-                    body = _("There is a new message on %s %s.", model_id.name, link)
+                    body = _("There is a new message on %s %s by %s.", model_id.name, link, self.env.user.display_name)
                     for follower_id in follower_ids:
                         author_is_portal = (
-                            message.author_id and message.author_id.user_ids and not message.author_id.user_ids.share
+                            message.author_id and message.author_id.user_ids and message.author_id.user_ids[0].share
                         )
-                        if not follower_id.external_only or (follower_id.external_only and not author_is_portal):
+                        if not follower_id.external_only or (follower_id.external_only and author_is_portal):
                             follower_id.channel_id.message_post(
                                 body=body,
                                 message_type="comment",
