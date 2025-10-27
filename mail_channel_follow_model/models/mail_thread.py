@@ -31,8 +31,9 @@ class MailThread(
                     body = _("There is a new message on %s %s by %s.", model_id.name, link, self.env.user.display_name)
                     for follower_id in follower_ids:
                         author_is_portal = (
-                            message.author_id and message.author_id.user_ids and message.author_id.user_ids[0].share
-                        )
+                            message.author_id and not message.author_id.user_ids
+                        ) or message.author_id.user_ids[0].share
+                        _logger.warning([follower_id.external_only, author_is_portal])
                         if not follower_id.external_only or (follower_id.external_only and author_is_portal):
                             follower_id.channel_id.message_post(
                                 body=body,
