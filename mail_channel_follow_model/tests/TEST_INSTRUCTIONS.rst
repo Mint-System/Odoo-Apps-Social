@@ -1,21 +1,27 @@
 Setup:
 
-- Setup discussion channel and subscribe to sale.order model
-- Set subtype to "Discussion" and enable "external only"
+- Install sale_management and contacts
+- Login as admin
+- Subscribe to sale channel
 
 Portal user:
 
 - Setup portal account for gemini.furniture39@example.com
 - Login with portal account in private browser tab
-- Send a message as portal user to S00007
-- Check if message in sale channel
+- Send a message "ping" as portal user to S00007
+- As admin if message is in sale channel
 
 Odoo bot:
 
-- Install sale_subscrption
-- Open S00022
-- Set start date minus 1 year
-- Set next invoice date minus 1 month
-- Open subscription phase "closed" and set mail template "Abonnement: Bewertungsanfrage"
-- Run server action "Ablauf des Abonnements"
+- Create a server action "Send message" for "sale.order"
+
+```python
+sale_order = env['sale.order'].search([('name', '=', 'S00007')])
+sale_order.message_post(body="ping", partner_ids=[env.ref('base.partner_admin').id], subtype_xmlid='mail.mt_comment')
+```
+
+- Execute the action
 - Ensure there is no message by Odoo bot
+- Open the follow settings of the channel and disable the "external only" option
+- Execute the action again
+- Check if message is in sale channel
