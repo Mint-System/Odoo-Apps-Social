@@ -33,7 +33,6 @@ class MailThread(
                         author_is_portal = (
                             message.author_id and not message.author_id.user_ids
                         ) or message.author_id.user_ids[0].share
-                        _logger.warning([follower_id.external_only, author_is_portal])
                         if not follower_id.external_only or (follower_id.external_only and author_is_portal):
                             follower_id.channel_id.message_post(
                                 body=body,

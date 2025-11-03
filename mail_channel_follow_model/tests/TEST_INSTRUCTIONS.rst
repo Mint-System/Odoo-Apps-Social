@@ -3,7 +3,6 @@ Setup:
 - Setup discussion channel and subscribe to sale.order model
 - Set subtype to "Discussion" and enable "external only"
 
-
 Portal user:
 
 - Setup portal account for gemini.furniture39@example.com
