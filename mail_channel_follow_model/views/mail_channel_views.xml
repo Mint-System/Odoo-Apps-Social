@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="mail.mail_channel_view_form" />
         <field name="arch" type="xml">
             <notebook position="inside">
-                <page name="followers" string="Followers">
+                <page name="follows" string="Follows">
                         <field
                         name="follower_ids"
                         context="{'default_channel_id': active_id}"
