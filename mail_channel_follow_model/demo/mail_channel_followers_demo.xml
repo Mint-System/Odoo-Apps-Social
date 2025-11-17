@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale_order_channel_follower" model="mail.channel.followers">
+        <field name="channel_id" ref="mail.channel_1" />
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field name="subtype_id" ref="mail.mt_comment" />
+        <field name="external_only" eval="True" />
+    </record>
+</odoo>
