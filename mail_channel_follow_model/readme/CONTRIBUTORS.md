@@ -1,1 +1,1 @@
-- Janik von Rotz \<login@janikvonrotz.ch\>
+* Janik von Rotz <login@janikvonrotz.ch>

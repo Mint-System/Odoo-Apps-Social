@@ -8,6 +8,6 @@ _logger = logging.getLogger(__name__)
 
 
 class MailChannel(models.Model):
-    _inherit = ["mail.channel"]
+    _inherit = ["discuss.channel"]
 
-    follower_ids = fields.One2many("mail.channel.followers", "channel_id")
+    follower_ids = fields.One2many("discuss.channel.followers", "channel_id")

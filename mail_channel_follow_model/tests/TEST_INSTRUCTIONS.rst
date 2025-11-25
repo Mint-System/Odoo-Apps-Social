@@ -6,14 +6,15 @@ Setup:
 
 Portal user:
 
-- Setup portal account for gemini.furniture39@example.com
+- Setup portal account for gemini_furniture@fake.geminifurniture.com
 - Login with portal account in private browser tab
-- Send a message "ping" as portal user to S00007
-- As admin if message is in "sales" channel
+- Send a message "ping" as portal user on S00007
+- As admin check if message is in "sales" channel
 
 Odoo bot:
 
-- Create a server action "Send message" for "sale.order"
+- Create a server action "Send message" on model "Server Action"
+- Select "Execute Code" and enter:
 
 ```python
 sale_order = env['sale.order'].search([('name', '=', 'S00007')])
@@ -24,4 +25,4 @@ sale_order.message_post(body="ping", partner_ids=[env.ref('base.partner_admin').
 - Ensure there is no message by Odoo bot
 - Open the follow settings of the channel and disable the "external only" option
 - Execute the action again
-- Check if message is in "sales" channel
+- Check if a new message is in "sales" channel

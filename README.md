@@ -13,5 +13,7 @@ git clone git@github.com:Mint-System/Odoo-Apps-Social.git ./addons/social
 ## Available modules
 
 | Module | Summary |
-| ------ | ------- |
-|        |         |
+| --- | --- |
+| [mail_channel_follow_model](mail_channel_follow_model) |         Subscribe channels to models and receive notifications in the channel. |
+| [mail_no_autofollow](mail_no_autofollow) |         This disables autofollow on message post. |
+| [mail_template_subscribe](mail_template_subscribe) |         When sending a mail subscribe matching template subscribe domain. |

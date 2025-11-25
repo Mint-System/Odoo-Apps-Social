@@ -2,6 +2,8 @@
 
 import logging
 
+from markupsafe import Markup
+
 from odoo import _, models
 
 _logger = logging.getLogger(__name__)
@@ -27,22 +29,18 @@ class MailThread(
                 if record:
                     record_name = record.display_name
                     record_url = "/web#id=%s&model=%s&view_type=form" % (message.res_id, message.model)
-                    link = '<a href="%s" target="_blank">%s</a>' % (record_url, record_name)
-                    body = _("There is a new message on %s %s by %s.", model_id.name, link, self.env.user.display_name)
+                    body = (
+                        _("There is a new message on %s") % model_id.name
+                        + Markup(' <a href="%s" target="_blank">%s</a> ') % (record_url, record_name)
+                        + _(" by %s.") % self.env.user.display_name
+                    )
+
                     for follower_id in follower_ids:
                         # Check if author (res.partner) is active and has no user or has a shared user
                         author_is_external = message.author_id.active and (
                             (message.author_id and not message.author_id.user_ids)
                             or message.author_id.user_ids[0].share
                         )
-                        # _logger.error(
-                        #     [
-                        #         "DEBUG",
-                        #         message.author_id.active,
-                        #         ((message.author_id and not message.author_id.user_ids)
-                        #         or message.author_id.user_ids[0].share),
-                        #     ]
-                        # )
                         if not follower_id.external_only or (follower_id.external_only and author_is_external):
                             follower_id.channel_id.message_post(
                                 body=body,

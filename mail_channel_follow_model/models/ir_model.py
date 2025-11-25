@@ -10,4 +10,4 @@ _logger = logging.getLogger(__name__)
 class IrModel(models.Model):
     _inherit = ["ir.model"]
 
-    follower_ids = fields.One2many("mail.channel.followers", "model_id")
+    follower_ids = fields.One2many("discuss.channel.followers", "model_id")

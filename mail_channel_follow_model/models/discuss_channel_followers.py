@@ -8,10 +8,10 @@ _logger = logging.getLogger(__name__)
 
 
 class MailChannelFollowers(models.Model):
-    _name = "mail.channel.followers"
-    _description = "Mail Channel Followers"
+    _name = "discuss.channel.followers"
+    _description = "Discuss Channel Followers"
 
-    channel_id = fields.Many2one("mail.channel", required=True)
+    channel_id = fields.Many2one("discuss.channel", required=True)
     model_id = fields.Many2one("ir.model", required=True, ondelete="cascade")
     subtype_id = fields.Many2one("mail.message.subtype")
     external_only = fields.Boolean(help="Notify channel if message author is external.")
