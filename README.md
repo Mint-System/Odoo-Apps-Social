@@ -17,3 +17,4 @@ git clone git@github.com:Mint-System/Odoo-Apps-Social.git ./addons/social
 | [mail_channel_follow_model](mail_channel_follow_model) |         Subscribe channels to models and receive notifications in the channel. |
 | [mail_no_autofollow](mail_no_autofollow) |         This disables autofollow on message post. |
 | [mail_template_subscribe](mail_template_subscribe) |         When sending a mail subscribe matching template subscribe domain. |
+| [web_chatter_sort](web_chatter_sort) |         Sort chatter messages by date. |

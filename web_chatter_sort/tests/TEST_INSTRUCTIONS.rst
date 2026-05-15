@@ -1,0 +1,2 @@
+- Open contact "Acme Corporation"
+- Ensure the chatter message are sorted by date
