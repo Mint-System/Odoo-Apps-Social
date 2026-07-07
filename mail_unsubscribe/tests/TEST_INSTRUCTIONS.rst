@@ -1,0 +1,10 @@
+- Open Settings > General Settings > Discuss
+- There are three new checkboxes - Ignore Current Partner, Mail Post Autofollow and Mail Create Nosubscribe
+- Enable the Ignore Current Partner setting and save changes
+- Open Sales > Orders > Quotations and create a new quotation for Deco Addict
+- Fill in the details and confirm the order by sending it, in the chatter box, only the current user will be subscribed
+- In the settings enable the other setting Mail Post Autofollow and save changes
+- Go back to the quotation and send a new email, this time adding some recipients
+- The new recipients will be automatically subscribed to the dialog once the email is sent
+- Go back to settings and enable the Mail Create Nosubscribe setting
+- Create a new quotation and send it, the dialog will have no subscribers

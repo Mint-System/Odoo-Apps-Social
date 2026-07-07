@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_unsubscribe
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-14 07:38+0000\n"
+"PO-Revision-Date: 2024-02-14 07:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail_unsubscribe
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid ""
+"Before sending a message all subscribers except for the current user will be"
+" removed."
+msgstr ""
+"Alle Follower ausser des Eigenen vor dem Versand einer Nachricht entfernen."
+
+#. module: mail_unsubscribe
+#: model:ir.model,name:mail_unsubscribe.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationseinstellungen"
+
+#. module: mail_unsubscribe
+#: model:ir.model,name:mail_unsubscribe.model_mail_thread
+msgid "Email Thread"
+msgstr "E-Mail-Thread"
+
+#. module: mail_unsubscribe
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid ""
+"Enable if current user should not be subscribed after sendig a message."
+msgstr ""
+"Eigener Benutzer wird nach dem Versenden einer Nachricht nicht abonniert."
+
+#. module: mail_unsubscribe
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid ""
+"Enable if message receivers should be subscribed automatically after sending"
+" a message."
+msgstr ""
+"Empfänger werden nach dem Versand einer Nachricht abonniert."
+
+#. module: mail_unsubscribe
+#: model:ir.model.fields,field_description:mail_unsubscribe.field_res_config_settings__ignore_current_partner
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid "Ignore Current Partner"
+msgstr "Eigener Benutzer ignorieren"
+
+#. module: mail_unsubscribe
+#: model:ir.model.fields,field_description:mail_unsubscribe.field_res_config_settings__mail_create_nosubscribe
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid "Mail Create Nosubscribe"
+msgstr "Eigener Benutzer nicht abonnieren"
+
+#. module: mail_unsubscribe
+#: model_terms:ir.ui.view,arch_db:mail_unsubscribe.res_config_settings_view_form
+msgid "Mail Post Autfollow"
+msgstr "Empfänger automatisch abonnieren"
+
+#. module: mail_unsubscribe
+#: model:ir.model.fields,field_description:mail_unsubscribe.field_res_config_settings__mail_post_autofollow
+msgid "Mail Post Autofollow"
+msgstr "Empfänger automatisch abonnieren"
