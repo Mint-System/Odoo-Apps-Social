@@ -1,0 +1,5 @@
+- Install module
+- Create a new invoice and choose a customer
+- In the chatter followers list, only the current user must be subscribed
+- If no users should be subscribed to the notifications open Setting > Technical > System Parameters and create a system parameter with key mail.unsubscribe_all and value True
+- Create another invoice and confirm it, the chatter box will show 0 followers
