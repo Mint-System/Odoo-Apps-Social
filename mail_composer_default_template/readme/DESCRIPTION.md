@@ -1,0 +1,1 @@
+Set default mail template for the mail composer.

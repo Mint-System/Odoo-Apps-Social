@@ -1,0 +1,11 @@
+- Enable the module.
+- Go to Settings > Technical > Email Templates.
+- Create new template for model "Sale Order".
+- Move the new template at the top of sale order templates.
+- Create new sale order.
+- Create new mial with "send by email" button.
+- Your new template is chosen as email template.
+- Add domain for Marc Demo as salesperson on your email template.
+- Move your template in email template list at bottom of sale order templates.
+- Chose Marc Demo as salesperson for the sale order.
+- Your email template is chose as long as Marc Demo is salesperson.

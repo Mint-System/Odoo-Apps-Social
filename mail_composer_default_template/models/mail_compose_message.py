@@ -1,13 +1,17 @@
-from odoo import _, api, fields, models
 import logging
+
+from odoo import api, models
+from odoo.tools.safe_eval import safe_eval
+
 _logger = logging.getLogger(__name__)
 
 
 class MailComposeMessage(models.TransientModel):
-    _inherit = 'mail.compose.message'
+    _inherit = "mail.compose.message"
+
 
     @api.model
-    def get_record_data(self, values):
+    def default_get(self, fields_list):
         """
         Set default template in the following priority:
         1. Template id given in values
@@ -15,25 +19,31 @@ class MailComposeMessage(models.TransientModel):
         3. First assigned template
         4. None
         """
+        res = super().default_get(fields_list)
 
-        res = super().get_record_data(values)
+        # if 'template_id' not in fields_list or res.get('template_id'):
+        #     return res
 
-        template_ids = self.env['mail.template'].search([('model', '=', values.get('model'))])
-        ressource_id = self.env[values['model']].browse(values.get('res_id'))
-        domain_template_ids = []
-
-        for template in template_ids.filtered(lambda t: t.domain):
-            domain = eval(template.domain)
-            if domain and ressource_id.filtered_domain(domain):
-                domain_template_ids.append(template)
-
-        if values.get('template_id', 0) != 0:
+        model = res.get('model')
+        if not model:
             return res
-        elif domain_template_ids:
-            res['template_id'] = domain_template_ids[0].id
-        elif template_ids:
-            res['template_id'] = template_ids[0].id
-        else:
-            res['template_id'] = ''
-        
+
+        res_ids_raw = res.get('res_ids')
+        res_id = False
+        if res_ids_raw:
+            ids = safe_eval(res_ids_raw) if isinstance(res_ids_raw, str) else res_ids_raw
+            res_id = ids[0] if ids else False
+
+        if not res_id:
+            return res
+
+        templates = self.env['mail.template'].search([('model', '=', model)])
+        if not templates:
+            return res
+
+        ressource_id = self.env[model].browse(res_id)
+        domain_templates = templates.filtered(
+            lambda t: t.domain and ressource_id.filtered_domain(safe_eval(t.domain))
+        )
+        res['template_id'] = (domain_templates or templates)[0].id
         return res
