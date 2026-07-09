@@ -1,0 +1,3 @@
+- Open Sales > Orders > Orders and create a new Sales Order
+- Confirm the order and delivery, create an invoice
+- Open the invoice and confirm it, no notifications are posted

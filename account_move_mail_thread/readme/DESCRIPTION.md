@@ -1,0 +1,1 @@
+This module disable mail threads when creating account moves.
