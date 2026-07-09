@@ -10,14 +10,11 @@ class AccountMove(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        _logger.warning("create called")
         return super(
             AccountMove, self.with_context(tracking_disable=True)
         ).create(vals_list)
 
     def write(self, vals):
-        _logger.warning("write called")
-
         return super(
             AccountMove, self.with_context(tracking_disable=True)
         ).write(vals)
